@@ -76,9 +76,12 @@ for item in data:
                                         continue
 
                         elif type(root) == type('') or type(root) == type(u''):
-                            ip = socket.inet_ntoa(socket.inet_aton(root))
-                            print "%s.%% A %s ~" % (name, ip)
-                            print "*.%s.%% A %s ~" % (name, ip)
+                            try:
+                                ip = socket.inet_ntoa(socket.inet_aton(root))
+                                print "%s.%% A %s ~" % (name, ip)
+                                print "*.%s.%% A %s ~" % (name, ip)
+                            except socket.error:
+                                pass
 
                     for key in mapping.keys():
                         if key == '':
