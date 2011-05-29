@@ -11,7 +11,7 @@ import string
 import sys
 
 def get_json(server, user, passwd):
-    params = '{"version": "1.1","method": "name_scan","params": [],"id": 1}'
+    params = '{"version": "1.1","method": "name_scan","params": ["","21474836487"],"id": 1}'
     auth = 'Basic ' + string.strip(base64.encodestring(user + ':' + passwd))
     headers = {"Content-type": "application/json", "Authorization": auth}
     conn = httplib.HTTPConnection(server)
