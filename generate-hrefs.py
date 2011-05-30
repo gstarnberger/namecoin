@@ -88,7 +88,7 @@ for item in data:
                                 ip = socket.inet_ntoa(socket.inet_aton(root))
                                 # print "%s.%% A %s ~" % (name, ip)
                                 # print "*.%s.%% A %s ~" % (name, ip)
-                                print '<a href="http://%s.bitname.org/">http://%s.bitname.org/</a><br />' % (name, name)
+                                print '<a href="http://%s.bitname.org/">%s.bitname.org</a><br />' % (name, name)
                             except socket.error:
                                 pass
 
