@@ -29,7 +29,7 @@ def get_json(server, user, passwd):
     return None
 
 def isValidHostElem(hostname):
-    allowed = re.compile("(?!-)[A-Z\d-]{1,63}(?<!-)$", re.IGNORECASE)
+    allowed = re.compile("(?!-)[a-z\d-]{1,63}(?<!-)$")
     return allowed.match(hostname)
 
 def isValidHostname(hostname):
@@ -37,7 +37,7 @@ def isValidHostname(hostname):
         return False
     if hostname[-1:] == ".":
         hostname = hostname[:-1]
-    allowed = re.compile("(?!-)[A-Z\d-]{1,63}(?<!-)$", re.IGNORECASE)
+    allowed = re.compile("(?!-)[a-z\d-]{1,63}(?<!-)$")
     return all(allowed.match(x) for x in hostname.split("."))
 
 data = get_json(config.SERVER, config.USER, config.PASSWD)
