@@ -61,7 +61,7 @@ for item in data:
     if name.startswith('d/'):
         name = name[2:]
 
-        if isValidHostElem(name):
+        if isValidHostElem(name) and item.get('expires_in', -1) >= 0:
 
             try:
                 payload = json.loads(item['value'])
