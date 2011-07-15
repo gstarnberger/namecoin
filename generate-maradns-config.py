@@ -58,7 +58,7 @@ for item in data:
             try:
                 payload = json.loads(item['value'])
 
-                if payload != [] and payload.has_key('map'):
+                if type(payload) == dict and payload.has_key('map'):
                     mapping = payload['map']
 
                     if mapping.has_key(''):
